@@ -49,7 +49,7 @@ serialize()
 dotenv.config()
 
 async function main() {
-  const txt = process.env.SESSION_ID
+  const txt = 'oreobyshizo~DEKr0PE0'
   if (!txt) {
     console.error('Environment variable not found.')
     return
@@ -124,7 +124,7 @@ global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse()
 global.prefix = new RegExp('^[' + (opts['PREFIX'] || '‎z/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.,\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
 //Thanks To Gemini Advanced 💗🫶🏻
-global.opts['db'] = process.env.DATABASE_URL || 'mongodb+srv://xeisensei7:DeepakR3442A@xeisensei.1vo3dqm.mongodb.net/?retryWrites=true&w=majority&appName=xeisensei';
+global.opts['db'] = process.env.DATABASE_URL //|| 'mongodb+srv://xeisensei7:DeepakR3442A@xeisensei.1vo3dqm.mongodb.net/?retryWrites=true&w=majority&appName=xeisensei';
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '')
     ? new CloudDBAdapter(opts['db'])
