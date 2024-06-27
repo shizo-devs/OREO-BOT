@@ -529,8 +529,8 @@ export async function participantsUpdate({ id, participants, action }) {
              let lea =
           `https://shizoapi.onrender.com/api/generator/leave?apikey=shizo&username=${encodeURIComponent(await this.getName(user))}&gcname=${encodeURIComponent(await this.getName(id))}&gcicon=${encodeURIComponent(ppgp)}&memberCount=${encodeURIComponent(nthMember.toString())}&avatar=${encodeURIComponent(pp)}&background=https://i.imgur.com/DrmeH1z.jpg`
              
-                        
-                        this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
+                        this.reply(id, text, null, { mentions: [user] })
+                       // this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                     }
                 } 
             }
@@ -568,6 +568,7 @@ export async function groupsUpdate(groupsUpdate) {
         await this.sendMessage(id, { text, mentions: this.parseMention(text) })
     }
 }
+/*
 export async function deleteUpdate(message) {
     try {
         const { fromMe, id, participant } = message
@@ -583,9 +584,6 @@ export async function deleteUpdate(message) {
 ┌─⊷  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀 
 ▢ *User:* @${participant.split`@`[0]} 
 └─────────────
-To disable this feature, type 
-*/off antidelete*
-*/enable delete*
 `.trim(), msg, {
             mentions: [participant]
         })
@@ -594,6 +592,8 @@ To disable this feature, type
         console.error(e)
     }
 }
+*/
+
 /*
  Polling Update 
 */
