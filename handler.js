@@ -196,9 +196,6 @@ export async function handler(chatUpdate) {
         } catch (e) {
             console.error(e)
         }
-        if (!isOwner) {
-        await this.readMessages([m.key]).catch(() => {})
-        }
         if (m.isBaileys) return
         if (opts['listen'])
             return
@@ -228,6 +225,10 @@ export async function handler(chatUpdate) {
             }, time)
         }
 
+    if (!isOwner) {
+        await this.readMessages([m.key]).catch(() => {})
+        }
+        
         if (m.isBaileys)
             return
         m.exp += Math.ceil(Math.random() * 10)
