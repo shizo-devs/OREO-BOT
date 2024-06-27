@@ -525,7 +525,12 @@ export async function participantsUpdate({ id, participants, action }) {
                         pp = await this.profilePictureUrl(user, 'image')
                         ppgp = await this.profilePictureUrl(id, 'image')
                         } finally {
-                        text = (action === 'add' ? (chat.sSwagat || this.swagat || conn.swagat || 'Welcome, @user').replace('@group', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'A stranger') :
+                        text = (action === 'add' ? (`Hi @User,
+
+Welcome to the group! 🎉 Get free CDR files here 📂 . Please note, only admins can send messages. 😃 Feel free to reach out directly with any questions. 🤗
+
+Cheers,
+*@user*`).replace('@group', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'A stranger') :
                             (chat.sBye || this.bye || conn.bye || 'GoodBye, @user')).replace('@user', '@' + user.split('@')[0])
          let nthMember = groupMetadata.participants.length;
          let wel =
