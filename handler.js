@@ -516,7 +516,7 @@ export async function participantsUpdate({ id, participants, action }) {
     switch (action) {
         case 'add':
         case 'remove':
-            if (chat.swagat) {
+            if (!chat.swagat) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
                     let pp = 'https://i.ibb.co/1ZxrXKJ/avatar-contact.jpg'
