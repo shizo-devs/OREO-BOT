@@ -197,7 +197,7 @@ export async function handler(chatUpdate) {
             console.error(e)
         }
         if (!isOwner) {
-        this.chatRead(m.chat, m.isGroup ? m.sender : undefined, m.id || m.key.id).catch(() => { })
+        await this.readMessages([m.key]).catch(() => {})
         }
         if (m.isBaileys) return
         if (opts['listen'])
