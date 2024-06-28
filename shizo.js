@@ -200,7 +200,7 @@ const connectionOptions = {
 global.conn = makeWASocket(connectionOptions)
 conn.isInit = false
 
-if (!opts['test']) {
+if (opts['test']) {
   setInterval(async () => {
    // if (global.db.data) await global.db.write().catch(console.error)
     if (opts['autocleartmp']) try {
@@ -210,7 +210,7 @@ if (!opts['test']) {
   }, 60 * 1000)
 }
 
-if (!opts['server']) (await import('./server.js')).default(global.conn, PORT)
+if (opts['server']) (await import('./server.js')).default(global.conn, PORT)
 
 /* Clear */
 async function clearTmp() {
